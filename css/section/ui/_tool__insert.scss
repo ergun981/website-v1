@@ -1,0 +1,30 @@
+.Insert {
+    position: absolute;
+    left: $iconSize / 2;
+    top: $iconSize / 2;
+    .Insert__Rectangle,
+    .Insert__Oval,
+    .Insert__Image {
+        float: left;
+        width: $iconSize;
+        height: $iconSize;
+        background-color: #8ce629;
+        border-radius: 2em;
+    }
+    .Insert__Oval {
+        margin: 0 5em;
+        border-radius: 100%;
+    }
+    .Insert__Text {
+        float: left;
+        font-size: 10em;
+        font-family: Georgia;
+        line-height: 1em;
+        height: 1em;
+    }
+    .Insert__Image {
+        margin-left: 5em;
+        //border: 1em solid #fff;
+        background-color: #76CCEC;
+    }
+}

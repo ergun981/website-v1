@@ -1,0 +1,63 @@
+.Extra {
+    position: absolute;
+    right: $iconSize / 2;
+    top: $iconSize / 2;
+    .Extra__Grid,
+    .Extra__Artboards,
+    .Extra__Export {
+        float: left;
+        width: $iconSize;
+        height: $iconSize;
+        background-color: #fff;
+        border: 1em solid #ccc;
+        border-radius: 2em;
+    }
+    .Extra__Artboards,
+    .Extra__Export {
+        &:after, &:before {
+            content: '';
+            position: absolute;
+            box-sizing: content-box;
+            border-color: #ddd;
+            border-style: solid;
+            border-width: 0;
+        }
+        &:after {
+            left: 50%;
+            top: 0;
+        }
+        &:before {
+            top: 50%;
+            left: 0;
+        }
+    }
+    .Extra__Artboards {
+        margin: 0 5em;
+        position: relative;
+        &:after {
+            width: 30%;
+            height: 100%;
+            transform: translateX(-50%);
+            border-left-width: 1em;
+            border-right-width: 1em;
+        }
+        &:before {
+            height: 30%;
+            width: 100%;
+            transform: translateY(-50%);
+            border-top-width: 1em;
+            border-bottom-width: 1em;
+        }
+    }
+    .Extra__Export {
+        position: relative;
+        &:after {
+            height: 100%;
+            border-left-width: 1em;
+        }
+        &:before {
+            width: 100%;
+            border-top-width: 1em;
+        }
+    }
+}

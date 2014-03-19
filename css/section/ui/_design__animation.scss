@@ -1,0 +1,250 @@
+$duration: 460ms;
+$dev: false;
+
+@if $dev {
+    $duration: 10ms;
+}
+
+.Section--Ui {
+    .Cursor {
+        animation: click 1400ms 2000ms ease both;
+        transform: translateX(23em) translateY(23em);
+    }
+}
+
+@keyframes click {
+    0% {
+        transform: translateX(23em) translateY(23em);
+    }
+    100% {
+        transform: translateX(164em) translateY(196em);
+    }
+}
+
+
+// SketchIco ----------------------------------------
+
+.Section--Ui {
+    .SketchIco--open {
+        animation: open 2000ms ease-out both;
+        transform-origin: 50%;
+    }
+}
+
+@keyframes open {
+    0% {}
+    10% {
+        opacity: .7;
+    }
+    12% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0%);
+    }
+    30% {
+        transform: translateX(-50%) translateY(-30%);
+    }
+    50% {
+        transform: translateX(-50%) translateY(0%);
+    }
+    70% {
+        transform: translateX(-50%) translateY(-30%);
+    }
+    90% {
+        transform: translateX(-50%) translateY(0%);
+    }
+}
+
+
+// ----------------------------------------
+
+.SketchApp,
+.SketchApp_Site__Grid li,
+.SketchApp_Site__Body .header .logo,
+.SketchApp_Site__Body .header .nav li,
+.SketchApp_Site__Body .slider,
+.SketchApp_Site__Body .welcome li,
+.SketchApp_Site__Body .promo li {
+    position: relative;
+    opacity: 0;
+}
+
+.SketchApp--fadein,
+.SketchApp_Site__Grid--fadein li,
+.SketchApp_Site__Body .header .logo--fadein,
+.SketchApp_Site__Body .header .nav--fadein li,
+.SketchApp_Site__Body .slider--fadein,
+.SketchApp_Site__Body .welcome--fadein li,
+.SketchApp_Site__Body .promo--fadein li {
+    animation: fadeIn $duration ease both;
+    transform-origin: 0% 0%;
+}
+
+///////
+
+.SketchApp_Site__Body .header .logo:after,
+.SketchApp_Site__Body .header .nav li:after,
+.SketchApp_Site__Body .slider:after,
+.SketchApp_Site__Body .welcome li:after,
+.SketchApp_Site__Body .promo li:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #bbb;
+}
+
+.SketchApp_Site__Body .header .logo--cover,
+.SketchApp_Site__Body .header .nav--cover li,
+.SketchApp_Site__Body .slider--cover,
+.SketchApp_Site__Body .welcome--cover li,
+.SketchApp_Site__Body .promo--cover li {
+    background-color: transparent !important;
+}
+
+.SketchApp_Site__Body .header .logo--cover:after,
+.SketchApp_Site__Body .header .nav--cover li:after,
+.SketchApp_Site__Body .slider--cover:after,
+.SketchApp_Site__Body .welcome--cover li:after,
+.SketchApp_Site__Body .promo--cover li:after {
+    animation: hide $duration ease both;
+    transform-origin: 0% 0%;
+}
+
+// APP ----------------------------------------
+
+.SketchApp--fadein {
+    animation-duration: 800ms;
+    animation-delay: 300ms;
+    transform-origin: 50% 80%;
+}
+
+// GRID ----------------------------------------
+
+@for $i from 1 through $grid {
+    .SketchApp_Site__Grid--fadein li {
+        animation-name: show;
+        &:nth-child(#{$i}) {
+            @if $i == 1 {
+                animation-delay: 0;
+            }
+            @else {
+                animation-delay: $duration / 2 * ($i - 1);
+            }
+        }
+    }
+}
+
+.SketchApp_Site__Grid--fadeout li {
+    animation-name: hide;
+}
+
+// NAV ----------------------------------------
+
+@for $i from 1 through 6 {
+    .SketchApp_Site__Body .header .nav--fadein li {
+        &:nth-child(#{$i}), &:nth-child(#{$i}):after {
+            @if $i == 1 {
+                animation-delay: 0;
+            }
+            @else {
+                animation-delay: $duration / 2 * ($i - 1);
+            }
+        }
+    }
+}
+
+// SLIDER ----------------------------------------
+
+.SketchApp_Site__Body .slider {
+    background: url("../img/slider.jpg") center;
+    background-size: cover;
+}
+
+// WELCOME ----------------------------------------
+
+@for $i from 1 through 4 {
+    .SketchApp_Site__Body .welcome li:nth-child(#{$i}) {
+        @if $i == 1 {
+            animation-delay: 0;
+        }
+        @else {
+            animation-delay: $duration / 2 * ($i - 1);
+        }
+    }
+}
+
+// PROMO 6 ----------------------------------------
+
+@for $i from 1 through 6 {
+    .SketchApp_Site__Body .promo li {
+        &:nth-child(#{$i}), &:nth-child(#{$i}):after {
+            @if $i == 1 {
+                animation-delay: 0;
+            }
+            @else {
+                animation-delay: $duration / 2 * ($i - 1);
+            }
+        }
+        &:nth-child(#{$i}) {
+            background: url("../img/grid--#{$i}.jpg");
+            background-size: cover;
+        }
+    }
+}
+
+// KEYFRAMES ----------------------------------------
+
+@if $dev {
+    .SketchIco {
+        animation: click 200ms 100ms ease-out both;
+    }
+    .SketchApp--fadein {
+        animation-duration: 100ms;
+        animation-delay: 300ms;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+}
+
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@keyframes hide {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

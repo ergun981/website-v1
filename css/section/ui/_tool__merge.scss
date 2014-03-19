@@ -1,0 +1,51 @@
+.Merge {
+    // value
+    $color: #7dead2;
+    //
+    position: absolute;
+    top: 5em;
+    left: 50%;
+    transform: translateX(-50%);
+    .Merge__Union, .Merge__Subtract, .Merge__Difference {
+        float: left;
+        position: relative;
+        width: $iconSize;
+        height: $iconSize;
+        &:after, &:before {
+            content: '';
+            position: absolute;
+            background-color: $color;
+            width: $iconSize - 3;
+            height: $iconSize - 3;
+        }
+        &:after {
+            left: 0;
+            bottom: 0;
+        }
+        &:before {
+            right: 0;
+            top: 0;
+        }
+    }
+    .Merge__Union {}
+    .Merge__Subtract {
+        margin: 0 5em;
+        &:before {
+            opacity: .4;
+        }
+    }
+    .Merge__Difference {
+        &:after, &:before {
+            background-color: transparent;
+            border: $iconSize / 3 solid $color;
+        }
+        &:after {
+            border-right: 0;
+            border-top: 0;
+        }
+        &:before {
+            border-left: 0;
+            border-bottom: 0;
+        }
+    }
+}

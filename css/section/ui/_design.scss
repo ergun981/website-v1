@@ -1,0 +1,102 @@
+.Section--Ui {
+    // SketchIco
+    .SketchIco {
+        z-index: 0;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 20em;
+        width: 32em;
+        height: 32em;
+        background: url("../img/sketchx64.png") no-repeat center;
+        background-size: 100%;
+    }
+    // Cursor
+    .Cursor {
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        margin-left: -2em;
+        margin-top: -2em;
+        width: 14em;
+        height: 21em;
+        background: url("../img/cursor.png") no-repeat center;
+        background-size: 100%;
+    }
+}
+
+// SketchApp ------------------------------------------ //
+
+.SketchApp {
+    z-index: 23;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    border: 1em solid #ddd;
+    border-bottom: 0;
+    border-radius: 3em 3em 0 0;
+    background: #fff;
+}
+
+$bg: whitesmoke;
+$bc: #eaeaea;
+
+.SketchApp__Header,
+.SketchApp__Layer,
+.SketchApp__Inspector {
+    position: absolute;
+}
+
+// HEADER ----------------
+
+$iconSize: 10em;
+$header: $iconSize * 2;
+
+.SketchApp__Header {
+    z-index: 2;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: $header + 1;
+    border-bottom: 1em solid $bc;
+    background-color: $bg;
+}
+
+@import "tool__insert";
+
+@import "tool__merge";
+
+@import "tool__extra";
+
+// LAYER ----------------
+
+.SketchApp__Layer {
+    left: 0;
+    bottom: 0;
+    width: 50em;
+    height: $height - $header - 2;
+    border-right: 1em solid $bc;
+    background-color: $bg;
+    li {
+        height: 6em;
+        &:nth-child(even) {
+            background-color: #f1f1f1;
+        }
+    }
+}
+
+// INSPECTOR ----------------
+
+.SketchApp__Inspector {
+    right: 0;
+    bottom: 0;
+    width: 50em;
+    height: $height - $header - 2;
+    border-left: 1em solid $bc;
+    background-color: $bg;
+}
+
+// BODY ----------------
+
+@import "tool__body";
