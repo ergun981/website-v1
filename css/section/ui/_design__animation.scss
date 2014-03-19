@@ -124,7 +124,6 @@ $dev: false;
 
 @for $i from 1 through $grid {
     .SketchApp_Site__Grid--fadein li {
-        animation-name: show;
         &:nth-child(#{$i}) {
             @if $i == 1 {
                 animation-delay: 0;
@@ -134,6 +133,10 @@ $dev: false;
             }
         }
     }
+}
+
+.SketchApp_Site__Grid--fadein li {
+    animation-name: show;
 }
 
 .SketchApp_Site__Grid--fadeout li {

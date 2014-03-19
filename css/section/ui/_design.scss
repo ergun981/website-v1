@@ -33,10 +33,14 @@
     position: relative;
     overflow: hidden;
     height: 100%;
-    border: 1em solid #ddd;
+    border: 1em solid #ccc;
     border-bottom: 0;
     border-radius: 3em 3em 0 0;
     background: #fff;
+    &:hover .SketchApp_Site__Grid--fadeout li{
+        opacity: 1;
+        animation: none;
+    }
 }
 
 $bg: whitesmoke;

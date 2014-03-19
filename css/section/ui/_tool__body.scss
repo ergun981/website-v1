@@ -19,6 +19,7 @@ $pageWidth: 188em;
     left: -$gutter;
     width: $pageWidth + $gutter;
     height: 100%;
+    transition: 200ms;
     li {
         float: left;
         width: ($pageWidth + $gutter) / $grid - $gutter;
@@ -45,7 +46,7 @@ $pageWidth: 188em;
         background-color: #ccc;
     }
     .header {
-        margin-top: 30em;
+        margin-top: 26em;
         margin-bottom: 10em;
         height: 6em;
         .logo {

@@ -37,7 +37,6 @@ body {
     font-weight: normal;
     line-height: 1.4;
     color: #333;
-    letter-spacing: 1px;
     background-color: #fff;
     -webkit-touch-callout: none;
     -webkit-text-size-adjust: none;
@@ -54,6 +53,9 @@ a {
 h1, h2, h3, h4, h5, h6, strong, b {
     font-weight: normal;
     font-family: 'FelbridgeStd', Arial, sans-serif;
+}
+h1, h2 {
+   line-height: 1;
 }
 
 .SiteWidth {
@@ -90,8 +92,10 @@ $height: 236em;
     bottom: 50%;
     width: 330px;
     transform: translateY(50%);
+    letter-spacing: 1px;
     h2 {
         font-size: 23px;
+        margin-bottom: 10px;
     }
     p {
         color: #999;
