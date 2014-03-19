@@ -1,0 +1,50 @@
+.Section {
+    position: relative;
+    height: 236px;
+    border-bottom: 1px solid #eee;
+    + .Section {
+        margin-top: 135px;
+    }
+}
+
+$size: 1px;
+$width: 330em;
+$height: 236em;
+
+.Scene {
+    position: absolute;
+    right: 50px;
+    bottom: 0;
+    width: $width;
+    height: $height;
+    font-size: $size;
+}
+
+
+.Content {
+    position: absolute;
+    left: 50px;
+    bottom: 50%;
+    width: 330px;
+    transform: translateY(50%);
+    letter-spacing: 1px;
+    h2 {
+        font-size: 23px;
+        margin-bottom: 10px;
+    }
+    p {
+        color: #999;
+    }
+}
+
+.Section--Right {
+    .Scene {
+        right: auto;
+        left: 50px;
+    }
+    .Content {
+        left: auto;
+        right: 50px;
+        text-align: right;
+    }
+}

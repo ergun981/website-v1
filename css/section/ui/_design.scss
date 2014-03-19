@@ -35,9 +35,9 @@
     height: 100%;
     border: 1em solid #ccc;
     border-bottom: 0;
-    border-radius: 3em 3em 0 0;
+    border-radius: 4em 4em 0 0;
     background: #fff;
-    &:hover .SketchApp_Site__Grid--fadeout li{
+    &:hover .SketchApp_Site__Grid li{
         opacity: 1;
         animation: none;
     }

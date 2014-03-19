@@ -63,60 +63,7 @@ h1, h2 {
     margin: 40px auto;
 }
 
-.Section {
-    position: relative;
-    height: 236px;
-    border-bottom: 1px solid #eee;
-    + .Section {
-        margin-top: 135px;
-    }
-}
-
-$size: 1px;
-$width: 330em;
-$height: 236em;
-
-.Scene {
-    position: absolute;
-    bottom: 0;
-    width: $width;
-    height: $height;
-    font-size: $size;
-}
-
+@import "section";
 @import "section/ui/design";
 @import "section/ui/design__animation";
 
-.Content {
-    position: absolute;
-    bottom: 50%;
-    width: 330px;
-    transform: translateY(50%);
-    letter-spacing: 1px;
-    h2 {
-        font-size: 23px;
-        margin-bottom: 10px;
-    }
-    p {
-        color: #999;
-    }
-}
-
-.Section--Right {
-    .Scene {
-        left: 50px;
-    }
-    .Content {
-        right: 50px;
-        text-align: right;
-    }
-}
-
-.Section--Left {
-    .Scene {
-        right: 50px;
-    }
-    .Content {
-        left: 0;
-    }
-}
